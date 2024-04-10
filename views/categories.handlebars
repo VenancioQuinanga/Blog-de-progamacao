@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+</head>
+<body>
+
+    <p><h1>Lista de Categories</h1></p>
+    <a href="/categories/add"><button class="btn btn-success">Nova categoria</button></a>
+    
+    {{#each categories}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h1>{{dataValues.name}}</h1>
+            <p><small>{{dataValues.slug}}</small></p>
+            <p>Data de criação : <small>{{dataValues.createdAt}}</small></p>
+            <p>
+                <a href="/categorias/edit/{{dataValues.id}}">
+                    <button class="btn btn-success">Editar categoria</button>
+                </a>
+                <a href="/deletar/{{dataValues.id}}">
+                    <button class="btn btn-danger">Deletar</button>
+                </a>
+            </p>
+        </div>
+    </div>
+    {{/each}}
+
+
+</body>
+</html>

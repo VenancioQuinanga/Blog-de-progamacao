@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {{#each texto}}
+    <div class="alert alert-danger">{{texto}}</div>
+        {{else}}
+    {{/each}}
+    
+    <h3>Editar Postagem</h3>
+        <div class="card">
+        <div class="card-body">
+        <form action="/posts/edit" method="post">
+           <input type="hidden" name="id" value="{{posts.dataValues.id}}">
+           <label for="titulo" class="mb-1">Titulo</label>
+            <input type="text" name="titulo" placeholder="Nome da postagem" class="form-control mb-2" value="{{posts.dataValues.titulo}}" required>
+            <label for="slug" class="mb-1">Slug</label>
+            <input type="text" name="slug" placeholder="slug da postagem" class="form-control mb-4" value="{{posts.dataValues.slug}}" required>
+            <label for="descricao" class="mb-1">Descrição</label>
+            <input type="text" name="descricao" placeholder="descricao da postagem" class="form-control mb-4" value="{{posts.dataValues.descricao}}" required>
+            <label for="conteudo" class="mb-1">Conteúdo</label>
+            <input type="text" name="conteudo" placeholder="conteudo da postagem" class="form-control mb-4" value="{{posts.dataValues.conteudo}}" required>
+            <label for="categoria" class="mb-1">Categoria</label>
+            <div class="form-control">
+                <select name="categoria">
+                {{#each categories}}
+                    <option value="{{dataValues.id}}">{{dataValues.name}}</option>
+                    
+                    {{else}}
+                    <option value="0">Nenhuma categória registrada</option>
+                {{/each}}
+            </select>
+            </div>
+            <button type="submit" class="btn btn-success mt-4">Editar Postagem</button>
+            </form>
+        </div>
+    </div>
+        
+</body>
+</html>

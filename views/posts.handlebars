@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+
+    <h1>Lista de posts</h1>
+     <a href="/posts/add"><button class="btn btn-success">Nova postagem</button></a>
+    {{#each posts}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h1>{{dataValues.titulo}}</h1>
+            <p><small>{{dataValues.name}}</small></p>
+            <p><small>{{dataValues.slug}}</small></p>
+            <p>Data de criação : <small>{{dataValues.createdAt}}</small></p>
+            <p>
+                <a href="/posts/edit/{{dataValues.id}}">
+                    <button class="btn btn-success">Editar postagem</button>
+                </a>
+                <a href="/deletar/post/{{dataValues.id}}">
+                    <button class="btn btn-danger">Deletar</button>
+                </a>
+            </p>
+        </div>
+    </div>
+    {{/each}}
+</body>
+</html>

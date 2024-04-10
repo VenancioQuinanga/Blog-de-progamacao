@@ -1,0 +1,17 @@
+<h1>{{categories.dataValues.name}}</h1>
+
+{{#each posts}}
+<div class="card mt-4 mb-4">
+    <div class="card-body">
+        <h1>{{dataValues.titulo}}</h1>
+        <hr>
+        <small>{{dataValues.date}}</small>
+        <hr>
+        {{dataValues.conteudo}}
+    </div>
+</div>
+{{else}}
+<div class="mt-4">
+    <p>Ainda não há postagens para está categória</p>
+</div>
+{{/each}}

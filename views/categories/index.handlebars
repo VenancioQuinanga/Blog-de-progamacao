@@ -1,0 +1,9 @@
+<h4>Categórias</h4>
+<hr>
+{{#each categories}}
+<a href="/categories/{{dataValues.id}}">
+    <h5>{{dataValues.name}}</h5>
+</a>
+{{/each}}
+
+<a href="add/categories" class="mt-4"><button class="btn btn-success">Nova categoria</button></a>

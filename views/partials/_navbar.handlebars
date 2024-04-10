@@ -1,0 +1,44 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
+    
+        <div class="container">
+        <!-- logo -->
+       <a class="navbar-brand me-5" href="/">Blog do nodejs</a>
+        <!-- menu sanduíche (to smartphone) -->
+       <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu-links">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       
+       <!-- menu of links -->
+       <div class="collapse navbar-collapse" id="menu-links">
+       <!-- logo and link alinhados à esquerda -->
+       <ul class="navbar-nav me-auto">
+       <!-- Link to home -->
+       <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+       <!-- Link desabled -->
+       <li class="nav-item"><a href="/posts" class="nav-link">posts</a></li>
+       <li class="nav-item"><a href="/categories" class="nav-link">Categories</a></li>
+
+       {{#if user}}
+       <li class="nav-item"><a href="/users/logout" class="nav-link">Logout</a></li>
+       {{else}}
+        <li class="nav-item"><a href="/users/registro" class="nav-link">Registro</a></li>
+        <li class="nav-item"><a href="/users/login" class="nav-link">Login</a></li>
+       {{/if}}
+       </ul>
+
+       <div class="d-flex">
+
+       <form class="input-group">
+
+       <input type="text" class="form-control" placeholder="Buscar">
+       <button class="btn btn-success"><i class="bi bi-search"></i></button>
+
+       </form>
+
+       </div>
+
+       </div>
+
+       </div>
+
+       </nav>

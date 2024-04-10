@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar categoria</title>
+</head>
+<body>
+
+    {{#each texto}}
+    <div class="alert alert-danger">{{texto}}</div>
+        {{else}}
+    {{/each}}
+    
+    <h3>Editar categoria</h3>
+        <div class="card">
+        <div class="card-body">
+        <form action="/categorias/edit" method="post">
+           
+                <input type="hidden" name="id" value="{{categories.dataValues.id}}">
+            <label for="name" class="mb-1">Categoria</label>
+                <input type="text" name="name" placeholder="Nome da categoria" class="form-control mb-2" value="{{categories.dataValues.name}}" required>
+            <label for="slug" class="mb-1">Slug</label>
+                <input type="text" name="slug" placeholder="slug da categoria" class="form-control mb-4" value="{{categories.dataValues.slug}}" required>
+            
+            <button type="submit" id="btn-category" class="btn btn-success">Editar categoria</button>
+            </form>
+        </div>
+    </div>
+        
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="jumbotron">
+                <h1 class="display-4">Bem-vindo ao Blog do Node</h1>
+                <p class="lead">Esse é um blog construido com objetivo de proporcionar conhecimentos aos progamadores</p>
+                <hr class="mt-4">
+                <p>Explore o nosso blog e divirta-se lendo postagens das mais diversas categórias da areas de progamação</p>
+                <p>Aprenda e ganhe cada vez mais conhecimentos nas mais diversas areas</p>
+                <p class="lead">
+                    <a href="/users/registro" class="btn btn-primary">Criar conta</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="mt-4">Postagens recentes</h2>
+
+    {{#each posts}}
+        <div class="card mt-4">
+            <div class="card-body">
+                <h3>{{dataValues.titulo}}</h3>
+                <p>{{dataValues.descricao}}</p>
+                <p>
+                    <a href="/posts/{{dataValues.id}}">
+                        <button class="btn btn-success">Ler mais</button>
+                    </a>
+                </p>
+                <small>{{dataValues.name}}</small>
+                <small>Data de publicação: {{dataValues.createdAt}}</small>
+            </div>
+        </div>
+        {{else}}
+        <p>Nenhuma postagem</p>
+    {{/each}}
+
+</body>
+</html>
